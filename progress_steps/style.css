@@ -53,9 +53,8 @@ body {
 }
 
 .progress-bar {
-  background: var(--accent-color);
-  width: 0%;
-  transition: width 150ms;
+  background: var(--accent-bg-color);
+  transition: width 250ms;
 }
 
 .step {
@@ -68,7 +67,7 @@ body {
   border: var(--line-thickness) solid var(--inactive-color);
   color: var(--accent-color);
   background: var(--accent-fg-color);
-  transition: border-color 150ms;
+  transition: border-color 200ms;
 }
 
 .step.active {
@@ -91,16 +90,14 @@ body {
   color: var(--accent-fg-color);
   background: var(--accent-bg-color);
   cursor: pointer;
-  transition: 150ms;
+  scale: 100%;
+  transition-property: scale, background;
+  transition-duration: 200ms;
 }
 
 .btn:disabled {
   background: var(--inactive-color);
   cursor: not-allowed;
-}
-
-.btn:focus {
-  outline: none;
 }
 
 .btn:not(:disabled):active {
