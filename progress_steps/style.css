@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap");
+
+:root {
+  --line-thickness: 3px;
+  --accent-color: #1b8553;
+  --accent-fg-color: #ffffff;
+  --accent-bg-color: #2ec27e;
+  --inactive-color: #ebebeb;
+  --bg-color: #fafafa;
+  --fg-color: black;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Assistant", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--fg-color);
+}
+
+.container {
+  width: 420px;
+  max-width: 90vw;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.progress-container::before,
+.progress-bar {
+  content: "";
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: -1;
+  height: calc(1.5 * var(--line-thickness));
+}
+
+.progress-container::before {
+  width: 100%;
+  background: var(--inactive-color);
+}
+
+.progress-bar {
+  background: var(--accent-color);
+  width: 0%;
+  transition: width 150ms;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: var(--line-thickness) solid var(--inactive-color);
+  color: var(--accent-color);
+  background: var(--accent-fg-color);
+  transition: border-color 150ms;
+}
+
+.step.active {
+  border-color: var(--accent-bg-color);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.btn {
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 32px;
+  font: inherit;
+  color: var(--accent-fg-color);
+  background: var(--accent-bg-color);
+  cursor: pointer;
+  transition: 150ms;
+}
+
+.btn:disabled {
+  background: var(--inactive-color);
+  cursor: not-allowed;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:not(:disabled):active {
+  scale: 95%;
+}
