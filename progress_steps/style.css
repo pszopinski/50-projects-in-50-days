@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap");
+
+:root {
+  --accent-color: #2ec27e;
+  --inactive-color: #ebebeb;
+  --line-thickness: 3px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Assistant", sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #fafafa;
+  color: #1b8553;
+}
+
+.container {
+  width: 320px;
+  max-width: 90vw;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.progress-container::before,
+.progress-bar {
+  content: "";
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  z-index: -1;
+  height: calc(1.5 * var(--line-thickness));
+}
+
+.progress-container::before {
+  width: 100%;
+  background: var(--inactive-color);
+}
+
+.progress-bar {
+  background: var(--accent-color);
+  transition: width 250ms;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: var(--line-thickness) solid var(--inactive-color);
+  background: white;
+  transition: border-color 200ms;
+}
+
+.step.active {
+  border-color: var(--accent-color);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.btn {
+  border: 0;
+  height: 40px;
+  border-radius: 20px;
+  padding: 0 32px;
+  font: inherit;
+  color: white;
+  background: var(--accent-color);
+  cursor: pointer;
+  scale: 100%;
+  transition-property: scale, background;
+  transition-duration: 200ms;
+}
+
+.btn:disabled {
+  background: var(--inactive-color);
+  cursor: not-allowed;
+}
+
+.btn:not(:disabled):active {
+  scale: 95%;
+}
