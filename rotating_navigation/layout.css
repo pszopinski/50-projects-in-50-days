@@ -1,0 +1,60 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.page {
+  position: absolute;
+  width: 100vw;
+  transform-origin: 0 0;
+  transition: rotate 500ms;
+}
+
+.page-content {
+  width: 90vw;
+  max-width: 800px;
+  margin: auto;
+  padding: 4rem;
+}
+
+.circle {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  position: absolute;
+  translate: -50% -50%;
+  transition: rotate 500ms;
+}
+
+.circle .icon {
+  /* square inscribed in the bottom-right quarter of a cirlce */
+  width: calc(50% / sqrt(2));
+  height: calc(50% / sqrt(2));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle .icon:last-child {
+  transform-origin: 0 0;
+  rotate: 90deg;
+}
+
+.circle .icon svg {
+  width: 60%;
+  height: 60%;
+}
+
+/* Rotation */
+.rotated {
+  .page {
+    rotate: -30deg;
+  }
+
+  .circle {
+    rotate: -90deg;
+  }
+}

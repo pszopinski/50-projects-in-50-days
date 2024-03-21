@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  line-height: 150%;
+  margin: 0;
+  color: #333333;
+  background-color: #222222;
+}
+
+.page {
+  background-color: #fdfdfd;
+  text-align: justify;
+}
+
+img {
+  max-width: 100%;
+}
+
+.call-to-action {
+  font-size: 120%;
+  font-weight: 600;
+  padding: 4rem;
+}
+
+.chat-gpt {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid;
+  font-style: oblique;
+  opacity: 0.5;
+}
+
+button.circle {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  background-color: #ffd700;
+}
