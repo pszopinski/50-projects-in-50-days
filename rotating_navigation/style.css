@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --rotation-angle: 30deg;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 20px;
+  line-height: 150%;
+  margin: 0;
+  color: #333333;
+  background-color: #222222;
+}
+
+.page {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background-color: #fdfdfd;
+  text-align: justify;
+  transform-origin: 0 0;
+  transition: rotate 500ms;
+}
+
+.page-content {
+  width: 90vw;
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+.call-to-action {
+  font-size: 120%;
+  font-weight: 600;
+  padding: 4rem;
+}
+
+.chat-gpt {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid;
+  font-style: oblique;
+  opacity: 0.5;
+}
+
+button.circle {
+  z-index: 2;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  background-color: #ffd700;
+  translate: -50% -50%;
+  transition: rotate 500ms, scale 100ms 50ms;
+}
+
+button.circle:hover,
+button.circle:active {
+  scale: 105%;
+}
+
+.circle .icon {
+  /* square inscribed in the bottom-right quarter of a cirlce */
+  width: calc(50% / sqrt(2));
+  height: calc(50% / sqrt(2));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle .icon:last-child {
+  transform-origin: 0 0;
+  rotate: 90deg;
+}
+
+.circle .icon svg {
+  width: 60%;
+  height: 60%;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  width: calc(100vh * tan(var(--rotation-angle)));
+}
+
+nav ul {
+  line-height: min(10vh, 5rem);
+  white-space: nowrap;
+  margin: 1lh 0;
+  padding: 0;
+}
+
+nav li {
+  list-style: none;
+  margin: 5vh calc(20vh * tan(var(--rotation-angle))) 0 5vh;
+  translate: -50vh 0;
+  transition: translate 250ms;
+}
+
+nav li:nth-last-child(1) {
+  padding-right: calc(1lh * tan(var(--rotation-angle)));
+  transition-delay: 500ms;
+}
+
+nav li:nth-last-child(2) {
+  padding-right: calc(2.5lh * tan(var(--rotation-angle)));
+  transition-delay: 750ms;
+}
+
+nav li:nth-last-child(3) {
+  padding-right: calc(4lh * tan(var(--rotation-angle)));
+  transition-delay: 1s;
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  border-radius: 0.5lh;
+  font-size: max(1rem, 0.333lh);
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+  background-color: #ffd700;
+  transition: scale 100ms 50ms;
+}
+
+nav a.active {
+  background-color: #8a2be2;
+  color: #fdfdfd;
+}
+
+nav a:hover,
+nav a:active {
+  scale: 105%;
+}
+
+/* Rotation */
+body.rotated {
+  overflow: hidden;
+
+  .page {
+    rotate: calc(-1 * var(--rotation-angle));
+  }
+
+  .circle {
+    rotate: -90deg;
+  }
+
+  nav li {
+    translate: 0 0;
+  }
+}
