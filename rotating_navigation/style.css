@@ -15,8 +15,22 @@ body {
 }
 
 .page {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
   background-color: #fdfdfd;
   text-align: justify;
+  transform-origin: 0 0;
+  transition: rotate 500ms;
+}
+
+.page-content {
+  width: 90vw;
+  max-width: 1200px;
+  margin: auto;
+  padding: 4rem;
 }
 
 img {
@@ -39,17 +53,91 @@ img {
 }
 
 button.circle {
+  z-index: 2;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
   padding: 0;
   border: 0;
   color: inherit;
   cursor: pointer;
   background-color: #ffd700;
+  translate: -50% -50%;
+  transition: rotate 500ms, scale 100ms 50ms;
+}
+
+button.circle:hover,
+button.circle:active {
+  scale: 105%;
+}
+
+.circle .icon {
+  /* square inscribed in the bottom-right quarter of a cirlce */
+  width: calc(50% / sqrt(2));
+  height: calc(50% / sqrt(2));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle .icon:last-child {
+  transform-origin: 0 0;
+  rotate: 90deg;
+}
+
+.circle .icon svg {
+  width: 60%;
+  height: 60%;
+}
+
+nav {
+  position: absolute;
+  bottom: 0;
+  width: calc(100vh / sqrt(3));
+}
+
+nav ul {
+  line-height: 10vh;
+  white-space: nowrap;
+  margin: 1lh 0;
+  padding: 0;
+}
+
+nav li {
+  list-style: none;
+  margin: 5vh 10vh 0 5vh;
+  translate: -50vh 0;
+  transition: translate 250ms;
+}
+
+nav li:nth-last-child(1) {
+  padding-right: calc(1lh / sqrt(3));
+  transition-delay: 500ms;
+}
+
+nav li:nth-last-child(2) {
+  padding-right: calc(2.5lh / sqrt(3));
+  transition-delay: 750ms;
+}
+
+nav li:nth-last-child(3) {
+  padding-right: calc(4lh / sqrt(3));
+  transition-delay: 1s;
 }
 
 nav a {
+  display: block;
+  text-align: center;
   border-radius: 0.5lh;
-  text-decoration: none;
+  font-size: max(1rem, 2.5vh);
   font-weight: 600;
+  text-decoration: none;
   color: inherit;
   background-color: #ffd700;
   transition: scale 100ms 50ms;
@@ -63,4 +151,21 @@ nav a.active {
 nav a:hover,
 nav a:active {
   scale: 105%;
+}
+
+/* Rotation */
+body.rotated {
+  overflow: hidden;
+
+  .page {
+    rotate: -30deg;
+  }
+
+  .circle {
+    rotate: -90deg;
+  }
+
+  nav li {
+    translate: 0 0;
+  }
 }
