@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
@@ -40,4 +44,23 @@ button.circle {
   color: inherit;
   cursor: pointer;
   background-color: #ffd700;
+}
+
+nav a {
+  border-radius: 0.5lh;
+  text-decoration: none;
+  font-weight: 600;
+  color: inherit;
+  background-color: #ffd700;
+  transition: scale 100ms 50ms;
+}
+
+nav a.active {
+  background-color: #8a2be2;
+  color: #fdfdfd;
+}
+
+nav a:hover,
+nav a:active {
+  scale: 105%;
 }
