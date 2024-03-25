@@ -116,7 +116,7 @@ nav ul {
 nav li {
   list-style: none;
   margin: 5vh calc(20vh * tan(var(--rotation-angle))) 0 5vh;
-  translate: -50vh 0;
+  translate: -50vw 0;
   transition: translate 250ms;
 }
 
