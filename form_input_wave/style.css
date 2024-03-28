@@ -87,6 +87,15 @@ label {
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 0.9em;
-  line-height: 1rlh;
+  opacity: 0.75;
+}
+
+label span {
+  display: inline-block;
+  transition: translate 200ms;
+}
+
+input:focus + label span,
+input:valid + label span {
+  translate: 0 -1lh;
 }
