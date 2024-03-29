@@ -36,7 +36,7 @@ button {
   font: inherit;
   text-transform: capitalize;
   cursor: pointer;
-  transition: all 500ms;
+  transition: all 200ms;
 }
 
 button:hover,
