@@ -41,6 +41,7 @@ blockquote {
   border-top: 1px solid color-mix(in srgb, currentColor 50%, transparent);
   border-bottom: 1px solid color-mix(in srgb, currentColor 50%, transparent);
   padding: 1rem 0;
+  margin: 1.5rem 0;
   background: linear-gradient(
     to right,
     transparent,
@@ -52,6 +53,7 @@ blockquote {
 blockquote footer {
   font-size: 1rem;
   opacity: 0.5;
+  margin-top: 0.5em;
 }
 
 blockquote footer::before {
