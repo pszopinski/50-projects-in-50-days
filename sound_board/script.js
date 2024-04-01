@@ -5,11 +5,11 @@
 function insertButton(sound) {
   const button = document.createElement("button");
   button.textContent = sound.replaceAll("_", " ");
-  addAudioFuntionalityTo(button, sound);
+  addAudioFunctionalityTo(button, sound);
   document.getElementById("soundBoard").appendChild(button);
 }
 
-function addAudioFuntionalityTo(button, sound) {
+function addAudioFunctionalityTo(button, sound) {
   button.audio = new Audio(`audio/${sound}.wav`);
   button.audio.addEventListener("play", () => {
     button.classList.add("playing");
