@@ -14,10 +14,18 @@ function addAudioFunctionalityTo(button, sound) {
   button.audio.addEventListener("play", () => {
     button.classList.add("playing");
   });
-  button.audio.addEventListener("ended", () => {
+  button.audio.addEventListener("pause", () => {
     button.classList.remove("playing");
   });
   button.addEventListener("click", (e) => {
+    stopPlayback();
     button.audio.play();
   });
+}
+
+function stopPlayback() {
+  for (const button of document.querySelectorAll("button")) {
+    button.audio.pause();
+    button.audio.currentTime = 0;
+  }
 }
