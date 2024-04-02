@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css2?family=Reddit+Mono:wght@400&family=Share+Tech+Mono&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: "Reddit Mono", monospace;
+  font-optical-sizing: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
+  background-color: #fff0f6;
+  background-image: radial-gradient(#fff0f6, #ffdeeb);
+  color: #a61e4d;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+article {
+  min-width: 10rem;
+  padding: 3rem 4rem;
+  border: 1px solid #a61e4d;
+  margin: 2rem;
+  color: #fff0f6;
+  background-color: #e64980;
+  box-shadow: inset 1rem 1rem 2rem #d6336c;
+  position: relative;
+}
+
+article main {
+  font-size: 2em;
+  color: #fff0f6;
+  text-shadow: 0.25rem 0.25rem 0.5rem #a61e4d;
+  white-space: pre;
+}
+
+#key {
+  background-color: #fff0f6;
+  color: #e64980;
+  text-shadow: none;
+  box-shadow: 0.25rem 0.25rem 0.5rem #a61e4d;
+}
+
+article header {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  width: 100%;
+  color: #a61e4d;
+}
+
+#container.initial-state :not(.initial-msg) {
+  display: none;
+}
+
+#container:not(.initial-state) .initial-msg {
+  display: none;
+}
