@@ -16,13 +16,22 @@
       </p>
       <p>
         Enter your choices, separated by a comma, in the box below and press
-        <kbd>Enter</kbd>.
+        <kbd>Enter</kbd>, and we'll pick a choice at random.
       </p>
-      <textarea placeholder="Choice A, Choice B, Choice C...">
-
-      </textarea>
-      <div id="choices"></div>
-      <p>We picked <span class="tag">Choice A</span>! 🎉</p>
+      <textarea
+        rows="2"
+        placeholder="Choice A, Choice B, Choice C..."
+        autofocus
+      ></textarea>
+      <ul class="choice-list">
+        <li class="tag selected">Choice A</li>
+        <li class="tag">Choice B</li>
+        <li class="tag">Choice C</li>
+      </ul>
+      <div class="results">
+        <p>We picked "<span id="chosenTag">Choice A</span>"!</p>
+        <button>Reset</button>
+      </div>
     </div>
   </body>
 </html>
