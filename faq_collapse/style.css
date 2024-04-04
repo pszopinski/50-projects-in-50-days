@@ -55,7 +55,7 @@ article {
     background: 0;
     border: 0;
     padding: 0;
-    line-height: 1lh;
+    line-height: inherit;
     cursor: pointer;
   }
 }
