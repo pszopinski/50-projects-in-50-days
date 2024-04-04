@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  font-optical-sizing: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f8f9fa;
+  color: #495057;
+}
+
+.container {
+  margin: 1rem;
+  max-width: 480px;
+  background-color: white;
+  border: 1px solid #dee2e6;
+  padding: 2rem;
+}
+
+h1 + p {
+  font-weight: bold;
+}
+
+kbd {
+  display: inline-block;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  box-shadow: 1px 1px 2px #e9ecef;
+}
