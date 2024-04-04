@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.75;
+  min-height: 100vh;
+  margin: 0;
+  color: #495057;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.container {
+  max-width: 40rem;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+/* Question */
+
+article {
+  text-align: left;
+  counter-increment: question;
+  border-radius: 1rem;
+  border: 1px solid #dee2e6;
+  margin: 1rem 0;
+  padding: 1rem;
+  cursor: pointer;
+  position: relative;
+
+  /* Icons */
+  &::before,
+  & button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    width: 1lh;
+    height: 1lh;
+    text-align: center;
+  }
+
+  /* Expand */
+  &::before {
+    font-family: bootstrap-icons;
+    content: "\F282";
+  }
+
+  /* Close */
+  button {
+    display: none;
+    color: inherit;
+    background: 0;
+    border: 0;
+    padding: 0;
+    line-height: inherit;
+    cursor: pointer;
+  }
+}
+
+article header {
+  padding-right: 2rem;
+  font-weight: bold;
+}
+
+article header::before {
+  content: "Q" counter(question) ": ";
+}
+
+article main {
+  display: none;
+  margin-top: 0.5rem;
+}
+
+/* Expanded question */
+
+article.active {
+  color: #343a40;
+  background-color: white;
+  border-color: #ced4da;
+  cursor: auto;
+
+  /* Expand */
+  &::before {
+    display: none;
+  }
+
+  /* Close */
+  button {
+    display: block;
+  }
+}
+
+article.active main {
+  display: block;
+}
