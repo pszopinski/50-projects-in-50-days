@@ -108,4 +108,11 @@ textarea:read-only {
   background-color: white;
   box-shadow: 1px 1px 2px #e9ecef;
   cursor: pointer;
+  transition: all 200ms;
+}
+
+.results button:focus {
+  outline: 0;
+  border-color: #4dabf7;
+  box-shadow: 0 0 2em color-mix(in srgb, #4dabf7 50%, transparent);
 }
