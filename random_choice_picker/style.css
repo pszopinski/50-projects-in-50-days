@@ -55,6 +55,12 @@ textarea {
   resize: none;
 }
 
+textarea:read-only {
+  background: 0;
+  color: #868e96;
+  cursor: not-allowed;
+}
+
 .choice-list {
   margin: 1em 0;
   padding: 0;
@@ -78,6 +84,10 @@ textarea {
 
 .results {
   text-align: center;
+}
+
+.results.hide {
+  display: none;
 }
 
 .results p {
