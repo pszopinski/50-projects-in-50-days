@@ -1,13 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Mono:wght@400&display=swap");
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: system-ui, sans-serif;
-  line-height: 1.75;
+  font-family: "Red Hat Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.5;
+  background-color: #f08c00;
+  color: white;
+  text-shadow: 0 0 1em #fab005;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
+  gap: 2rem;
   min-height: 100vh;
   margin: 0;
+  padding: 2rem;
+}
+
+article {
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 5em #e67700;
+  padding: 2rem 4rem;
+}
+
+article .bi {
+  display: block;
+  font-size: 5em;
+}
+
+article .counter {
+  display: block;
+  font-size: 4em;
+}
+
+@media (width >= 800px) {
+  body {
+    flex-direction: row;
+  }
 }
