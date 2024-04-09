@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
     <title>Random Choice Picker</title>
@@ -12,17 +11,23 @@
     <div class="container">
       <h1>Random Choice Picker</h1>
       <p>
-        So you need some help making a choice at random? We've got your covered!
+        So you need some help making a choice at random? We've got you covered!
       </p>
       <p>
         Enter your choices, separated by a comma, in the box below and press
-        <kbd>Enter</kbd>.
+        <kbd>Enter</kbd>, and we'll pick a choice at random.
       </p>
-      <textarea placeholder="Choice A, Choice B, Choice C...">
-
-      </textarea>
-      <div id="choices"></div>
-      <p>We picked <span class="tag">Choice A</span>! 🎉</p>
+      <textarea
+        rows="2"
+        placeholder="Choice A, Choice B, Choice C..."
+        autofocus
+        required
+      ></textarea>
+      <ul class="choice-list"></ul>
+      <div class="results hide">
+        <p>We choose "<span id="chosenTag"></span>"!</p>
+        <button>Reset</button>
+      </div>
     </div>
   </body>
 </html>
