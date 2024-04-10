@@ -8,7 +8,7 @@ async function fetchMovieData(endpoint, searchParams) {
   const queryString = new URLSearchParams(searchParams).toString();
   const url = new URL(`${endpoint}?${queryString}`, BASE_URL);
 
-  return fetch(url, { HEADERS });
+  return fetch(url, { headers: HEADERS });
 }
 
 async function getMovies() {
@@ -20,4 +20,48 @@ async function getMovies() {
   return json.results;
 }
 
-getMovies().then(console.log);
+function update(movies) {
+  document
+    .querySelector("#movies")
+    .replaceChildren(...movies.map(MovieElement));
+}
+
+function MovieElement(movie) {
+  const { id, poster_path, title, vote_average, overview } = movie;
+
+  let article = document.createElement("article");
+  article.classList.add("movie");
+  article.innerHTML = `\
+    <article tabindex="0">
+      <img src="https://image.tmdb.org/t/p/w600_and_h900_bestv2${poster_path}" alt="${title} Poster" />
+      <footer>
+        <h2 class="title">${title}</h2>
+        <div class="rating ${getRatingClass(vote_average)}">
+          ${vote_average.toFixed(1)}
+        </div>
+      </footer>
+      <div class="overview">
+        <h3>${title}</h3>
+        <p>${overview}</p>
+        <p class="see-more">
+          <a href="https://www.themoviedb.org/movie/${id}" target="_blank">See more</a>
+        </p>
+      </div>
+    </article>`;
+
+  return article;
+}
+
+function getRatingClass(rating) {
+  if (rating >= 7) {
+    return "green";
+  }
+
+  if (rating >= 5) {
+    return "yellow";
+  }
+
+  return "red";
+}
+
+getMovies().then(update);

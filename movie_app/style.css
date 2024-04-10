@@ -13,6 +13,8 @@
   --green: #40c057;
   --yellow: #fab005;
   --red: #fa5252;
+  --blue: #228be6;
+  --purple: #7950f2;
   --border-radius: 0.5rem;
 
   font-size: 14px;
@@ -28,9 +30,31 @@ body {
   color: #f8f9fa;
 }
 
+a,
+a:link {
+  color: var(--blue);
+  text-decoration: underline;
+}
+
+a:visited {
+  color: var(--purple);
+}
+
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  color: var(--red);
+}
+
 .container {
+  --tile-width: 20rem;
+  --tile-gap: 1rem;
+
   margin: auto;
-  max-width: 1200px;
+  max-width: calc(5 * var(--tile-width) + 7 * var(--tile-gap));
 }
 
 /* Header */
@@ -39,12 +63,14 @@ body {
   background-color: #343a40;
   padding: 1rem 2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .header h1 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 600;
   margin: 0;
 }
@@ -63,26 +89,37 @@ body {
 }
 
 .header .search:focus {
-  outline: 0;
-  border: 1px solid var(--gray);
+  outline: 1px solid var(--blue);
 }
 
 /* Movies */
 
+.loading {
+  font-size: 1.5em;
+  color: var(--disabled);
+}
+
 .movies {
-  padding: 1.5rem;
+  padding: calc(1.5 * var(--tile-gap));
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: var(--tile-gap);
 }
 
 .movie {
   color: inherit;
   text-decoration: inherit;
-  flex-basis: 20rem;
+  border-radius: var(--border-radius);
+  flex-basis: var(--tile-width);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.movie:focus-within {
+  outline: 2px solid var(--blue);
+  cursor: auto;
 }
 
 .movie img {
@@ -97,11 +134,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
 }
 
 .movie .title {
   font-size: 1.5em;
   font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   margin: 0;
 }
 
@@ -126,26 +167,28 @@ body {
 
 /* Overview */
 
-.movie .overview {
+.overview {
   background-color: var(--light);
   color: var(--darker);
   padding: 2rem;
+  box-shadow: 0 0 3rem black;
   position: absolute;
   bottom: 0;
   max-height: 100%;
   overflow: auto;
   translate: 0 100%;
   opacity: 0;
-  transition: all 250ms 100ms ease-in-out;
+  visibility: hidden;
+  transition: all 200ms ease-out;
 }
 
-.movie:hover .overview,
-.movie:focus .overview {
+.movie:focus-within .overview {
   translate: 0 0;
   opacity: 1;
+  visibility: visible;
 }
 
-.movie .overview h3 {
+.overview h3 {
   font-size: 1.2em;
   font-weight: 600;
   padding-bottom: 0.5rem;
@@ -153,6 +196,11 @@ body {
   margin: 0 0 0.5rem;
 }
 
-.movie .overview p {
-  margin: 0;
+.overview p {
+  margin: 0.5em 0;
+}
+
+.overview p.see-more {
+  font-weight: 600;
+  margin-bottom: 0;
 }
