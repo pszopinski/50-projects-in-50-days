@@ -11,11 +11,17 @@ async function fetchMovieData(endpoint, searchParams) {
   return fetch(url, { headers: HEADERS });
 }
 
-async function getMovies() {
-  const response = await fetchMovieData("discover/movie", {
-    sort_by: "popularity.desc",
-    include_adult: true,
-  });
+async function getMovies(searchStr) {
+  const response = searchStr
+    ? await fetchMovieData("search/movie", {
+        query: searchStr,
+        include_adult: true,
+      })
+    : await fetchMovieData("discover/movie", {
+        sort_by: "popularity.desc",
+        include_adult: true,
+      });
+
   const json = await response.json();
   return json.results;
 }
@@ -65,3 +71,8 @@ function getRatingClass(rating) {
 }
 
 getMovies().then(update);
+
+document.querySelector("#form").addEventListener("submit", (event) => {
+  event.preventDefault();
+  getMovies(event.target.elements.search.value).then(update);
+});
