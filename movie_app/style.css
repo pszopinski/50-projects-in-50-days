@@ -1,0 +1,158 @@
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --dark: #343a40;
+  --darker: #212529;
+  --gray: #868e96;
+  --disabled: #adb5bd;
+  --light: #f8f9fa;
+  --green: #40c057;
+  --yellow: #fab005;
+  --red: #fa5252;
+  --border-radius: 0.5rem;
+
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+body {
+  font-family: "Rethink Sans", sans-serif;
+  font-optical-sizing: auto;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #212529;
+  color: #f8f9fa;
+}
+
+.container {
+  margin: auto;
+  max-width: 1200px;
+}
+
+/* Header */
+
+.header {
+  background-color: #343a40;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.header .search {
+  font-size: 1.2em;
+  color: inherit;
+  background-color: #212529;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 0;
+}
+
+.header .search::placeholder {
+  color: var(--disabled);
+}
+
+.header .search:focus {
+  outline: 0;
+  border: 1px solid var(--gray);
+}
+
+/* Movies */
+
+.movies {
+  padding: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.movie {
+  color: inherit;
+  text-decoration: inherit;
+  flex-basis: 20rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.movie img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2/3;
+}
+
+.movie footer {
+  background-color: var(--dark);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie .title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0;
+}
+
+.movie .rating {
+  font-size: 1.2em;
+  font-weight: 800;
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+}
+
+.movie .rating.green {
+  background-color: var(--green);
+}
+
+.movie .rating.yellow {
+  background-color: var(--yellow);
+}
+
+.movie .rating.red {
+  background-color: var(--red);
+}
+
+/* Overview */
+
+.movie .overview {
+  background-color: var(--light);
+  color: var(--darker);
+  padding: 2rem;
+  position: absolute;
+  bottom: 0;
+  max-height: 100%;
+  overflow: auto;
+  translate: 0 100%;
+  opacity: 0;
+  transition: all 250ms 100ms ease-in-out;
+}
+
+.movie:hover .overview,
+.movie:focus .overview {
+  translate: 0 0;
+  opacity: 1;
+}
+
+.movie .overview h3 {
+  font-size: 1.2em;
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--gray);
+  margin: 0 0 0.5rem;
+}
+
+.movie .overview p {
+  margin: 0;
+}
