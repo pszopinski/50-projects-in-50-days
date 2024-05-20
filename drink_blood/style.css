@@ -5,7 +5,7 @@
   --clot-red: #7f1d1d;
   --gangrene: #450a0a;
   --bone-white: #fff7ed;
-  --gap-big: min(3vw, 2rem);
+  --gap-big: min(3vmin, 2rem);
   --gap-small: calc(var(--gap-big) / 2);
 }
 
@@ -21,6 +21,7 @@ body {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
+  padding: var(--gap-big);
   background-color: var(--gangrene);
   background-image: radial-gradient(
     circle at center,
@@ -31,7 +32,6 @@ body {
 }
 
 .container {
-  margin: var(--gap-big);
   max-width: 800px;
   width: 80%;
 }
@@ -58,7 +58,7 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: var(--gap-big);
+  gap: 2rem;
   text-align: center;
   margin: var(--gap-big) 0;
 }
@@ -84,6 +84,12 @@ h1 {
   text-align: center;
   cursor: pointer;
   overflow: hidden;
+  transition-property: background-color, color, scale;
+  transition-duration: 150ms;
+}
+
+.cup:active {
+  scale: 105%;
 }
 
 .cup.full {
@@ -93,11 +99,12 @@ h1 {
 
 .cup-big {
   width: 8rem;
-  margin: 0 var(--gap-big);
+  margin: 0 3rem;
 }
 
 .remaining {
   flex: 1;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -114,8 +121,9 @@ h1 {
   color: var(--bone-white);
   font-size: 2em;
   font-weight: bold;
-  height: 50%;
+  height: 0%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  transition: height 150ms;
 }
