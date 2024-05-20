@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:wght@700&family=Reddit+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --blood-red: #dc2626;
+  --clot-red: #7f1d1d;
+  --gangrene: #450a0a;
+  --bone-white: #fff7ed;
+  --gap-big: min(3vw, 2rem);
+  --gap-small: calc(var(--gap-big) / 2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Reddit Sans", sans-serif;
+  line-height: 1.15;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--gangrene);
+  background-image: radial-gradient(
+    circle at center,
+    transparent,
+    rgba(0 0 0 /50%)
+  );
+  color: var(--bone-white);
+}
+
+.container {
+  margin: var(--gap-big);
+  max-width: 800px;
+  width: 80%;
+}
+
+header,
+footer,
+.main-content {
+  text-align: center;
+  background-color: var(--bone-white);
+  box-shadow: 0 var(--gap-small) var(--gap-big) 0 var(--gangrene);
+  color: var(--gangrene);
+  border-radius: var(--gap-big);
+  padding: 2rem;
+}
+
+h1 {
+  font-family: "Crimson Text", serif;
+  color: var(--blood-red);
+  font-size: 2.5em;
+}
+
+.main-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-big);
+  text-align: center;
+  margin: var(--gap-big) 0;
+}
+
+.cups {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 0.5rem;
+  row-gap: 1rem;
+  margin: 2rem 1rem;
+}
+
+.cup {
+  width: 2.5rem;
+  aspect-ratio: 1/3;
+  border-radius: 0 0 100% 100% / 0 0 33% 33%;
+  border: 0.2rem solid var(--clot-red);
+  color: var(--gangrene);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cup.full {
+  background-color: var(--blood-red);
+  color: var(--bone-white);
+}
+
+.cup-big {
+  width: 8rem;
+  margin: 0 var(--gap-big);
+}
+
+.remaining {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.remaining-value {
+  height: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.percentage {
+  background-color: var(--blood-red);
+  color: var(--bone-white);
+  font-size: 2em;
+  font-weight: bold;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
