@@ -40,7 +40,6 @@ body.dark-mode {
   cursor: pointer;
 }
 
-.toggle-dark-mode:focus,
 .toggle-dark-mode:hover,
 .toggle-dark-mode:active {
   scale: 105%;
@@ -49,6 +48,7 @@ body.dark-mode {
 .clock {
   width: 16rem;
   height: 16rem;
+  margin: auto;
   position: relative;
 }
 
@@ -87,4 +87,8 @@ body.dark-mode {
 .time {
   display: block;
   font-size: 2.5em;
+}
+
+.date {
+  text-transform: capitalize;
 }
