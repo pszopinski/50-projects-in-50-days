@@ -22,9 +22,33 @@ function updateClockHands(date) {
   const minutes = date.getMinutes() + seconds / 60;
   const hours = date.getHours() + minutes / 60;
 
-  hourHand.style.rotate = `${hours / 12}turn`;
-  minuteHand.style.rotate = `${minutes / 60}turn`;
-  secondHand.style.rotate = `${seconds / 60}turn`;
+  rotateHand(hourHand, hours / 12);
+  rotateHand(minuteHand, minutes / 60);
+  rotateHand(secondHand, seconds / 60);
+}
+
+function rotateHand(hand, fraction) {
+  if (fraction === 0) {
+    finishFullTurn(hand);
+    return;
+  }
+
+  hand.style.rotate = `${fraction}turn`;
+}
+
+function finishFullTurn(hand) {
+  hand.style.rotate = "1turn";
+
+  // Disable animations and reset back to 0turn
+  setTimeout(() => {
+    hand.style.transition = "initial";
+    hand.style.rotate = "0turn";
+  }, 500);
+
+  // Re-enable animations
+  setTimeout(() => {
+    hand.style.removeProperty("transition");
+  }, 600);
 }
 
 function updateDisplay(date) {
