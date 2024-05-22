@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+  transition: all 150ms;
+}
+
+body {
+  --foreground: black;
+  --background: white;
+
+  font-family: system-ui, sans-serif;
+  line-height: 1.75;
+  min-height: 100dvh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: clamp(16px, 3dvh, 32px);
+}
+
+body.dark-mode {
+  --foreground: white;
+  --background: #333;
+}
+
+.toggle-dark-mode {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  translate: -50%;
+  font: inherit;
+  font-size: 0.8em;
+  border: 0;
+  border-radius: 1000px;
+  padding: 0.25rem 1rem;
+  background: var(--foreground);
+  color: var(--background);
+  cursor: pointer;
+}
+
+.toggle-dark-mode:focus,
+.toggle-dark-mode:hover,
+.toggle-dark-mode:active {
+  scale: 105%;
+}
+
+.clock {
+  width: 16rem;
+  height: 16rem;
+  position: relative;
+}
+
+.hand {
+  width: 0.2rem;
+  height: 8rem;
+  background-color: var(--foreground);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -100%;
+  transform-origin: bottom;
+}
+
+.hand-hour {
+  scale: 100% 75%; /* width, height */
+}
+
+.hand-second {
+  background-color: red;
+  scale: 50% 100%; /* width, height */
+}
+
+.center-point {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--foreground);
+  border: 0.125rem solid red;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+}
+
+.time {
+  display: block;
+  font-size: 2.5em;
+}
