@@ -30,6 +30,7 @@ for (const project of projects) {
   video.autoplay = true;
   video.loop = true;
   video.muted = true;
+  video.playsInline = true;
 
   a.appendChild(video);
   document.body.appendChild(a);
