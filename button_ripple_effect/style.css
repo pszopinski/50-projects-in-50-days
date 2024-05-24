@@ -28,6 +28,11 @@ body {
   text-transform: uppercase;
   border-radius: 4px;
   position: relative;
+  cursor: pointer;
+}
+
+.btn.clicked {
+  cursor: wait;
 }
 
 @property --opacity {

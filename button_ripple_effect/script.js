@@ -39,8 +39,12 @@ btn.showRipple = function (clickEvent) {
   }
 
   const boundingRect = this.getBoundingClientRect();
-  this.ripplePosition.x = `${clickEvent.x - boundingRect.x}px`;
-  this.ripplePosition.y = `${clickEvent.y - boundingRect.y}px`;
+  this.ripplePosition.x = clickEvent.x
+    ? `${clickEvent.x - boundingRect.x}px`
+    : "50%";
+  this.ripplePosition.y = clickEvent.y
+    ? `${clickEvent.y - boundingRect.y}px`
+    : "50%";
 
   this.classList.add("clicked");
   setTimeout(() => {
