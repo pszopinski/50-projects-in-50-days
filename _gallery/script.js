@@ -1,4 +1,5 @@
 const projects = [
+  "button_ripple_effect",
   "animated_navigation",
   "background_slider",
   "blurry_loading",
