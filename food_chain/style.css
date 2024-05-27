@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Comic+Neue&family=Noto+Color+Emoji&display=swap");
+
 * {
   box-sizing: border-box;
+  transition: all 150ms;
 }
 
 body {
@@ -12,11 +14,39 @@ body {
 }
 
 .container {
+  --emoji-top: "☁️";
+  --emoji-bottom: "🐛";
   max-width: 1200px;
   margin: auto;
   background-color: white;
   padding: 2rem max(5vw, 3rem);
+  border-radius: 3rem;
   position: relative;
+}
+
+.container::before,
+.container::after {
+  position: absolute;
+  font-size: 10rem;
+  line-height: 0;
+  text-shadow: 0 2rem 3rem rgba(0, 0, 0, 25%);
+  display: none;
+}
+
+.container::before {
+  content: var(--emoji-top);
+  top: 2rem;
+  left: 90%;
+  translate: -50%;
+}
+
+.container::after {
+  content: var(--emoji-bottom);
+  bottom: 2rem;
+  left: 10%;
+  translate: -50%;
+  /* Flip the little guy to look right */
+  scale: -1 1;
 }
 
 .emoji-list {
@@ -47,6 +77,12 @@ body {
   position: absolute;
   left: -0.5rem;
   translate: -50%;
+  z-index: 1;
+}
+
+.box.interactive:hover,
+.box.interactive.being-swapped {
+  border-color: #ff9800;
 }
 
 .emoji {
@@ -57,7 +93,20 @@ body {
   align-items: center;
   font-size: 3rem;
   border-radius: 50%;
+  cursor: default;
+}
+
+.emoji[draggable="true"] {
   background-color: white;
+  cursor: grab;
+}
+
+.emoji[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+.being-swapped .emoji {
+  font-size: 2.5rem;
 }
 
 .sentence-list {
@@ -69,8 +118,8 @@ body {
   margin-bottom: 2rem;
 }
 
-.sentence::after {
-  content: "🤔";
+.sentence:not(.correct)::after {
+  content: " 🤔";
 }
 
 .sentence.correct::after {
@@ -86,6 +135,21 @@ body {
   text-transform: uppercase;
 }
 
+.game-over {
+  .container {
+    --emoji-top: "☀️";
+    --emoji-bottom: "🦋";
+  }
+
+  .box {
+    border-color: #ff9800;
+  }
+
+  .emoji {
+    background-color: transparent;
+  }
+}
+
 @media (width >= 800px) {
   body {
     padding: 6rem;
@@ -94,29 +158,11 @@ body {
   }
 
   .container {
-    border-radius: 3rem;
     box-shadow: 0 0 6rem rgba(0, 0, 0, 50%);
   }
 
   .container::before,
   .container::after {
-    position: absolute;
-    font-size: 10rem;
-    line-height: 0;
-    text-shadow: 0 2rem 3rem rgba(0, 0, 0, 25%);
-  }
-
-  .container::before {
-    content: "🪨";
-    left: 0;
-    bottom: 0;
-    translate: -50% 50%;
-  }
-
-  .container::after {
-    content: "☁️";
-    top: 0;
-    right: 0;
-    translate: 50% -50%;
+    display: block;
   }
 }
