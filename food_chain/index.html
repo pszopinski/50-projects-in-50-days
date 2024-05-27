@@ -11,75 +11,8 @@
     <div class="container">
       <h1>Food Chain</h1>
       <p>Reorder the icons to form a food chain.</p>
-
-      <ol class="emojis">
-        <li class="emoji" data-name="sun">☀️</li>
-        <li class="arrow"></li>
-        <li
-          class="emoji"
-          draggable="true"
-          data-name="plants"
-          data-sentence="${self} need ${other} to grow"
-        >
-          ☘️
-        </li>
-        <li class="arrow"></li>
-        <li
-          class="emoji"
-          draggable="true"
-          data-name="caterpillars"
-          data-sentence="${self} eat ${other}"
-        >
-          🐛
-        </li>
-        <li class="arrow"></li>
-        <li
-          class="emoji"
-          draggable="true"
-          data-name="birds"
-          data-sentence="${self} eat ${other}"
-        >
-          🐦‍
-        </li>
-        <li class="arrow"></li>
-        <li
-          class="emoji"
-          draggable="true"
-          data-name="foxes"
-          data-sentence="${self} hunt ${other}"
-        >
-          🦊
-        </li>
-        <li class="arrow"></li>
-        <li
-          class="emoji"
-          draggable="true"
-          data-name="wolves"
-          data-sentence="${self} hunt ${other}"
-        >
-          🐺
-        </li>
-        <li class="arrow"></li>
-        <li
-          class="emoji"
-          draggable="true"
-          data-name="bacteria"
-          data-sentence="${self} decompose ${other}"
-        >
-          🦠
-        </li>
-      </ol>
-
-      <ol class="sentences">
-        <li class="sentence correct">
-          <span class="blank">plants</span> need
-          <span class="blank">sun</span> to grow
-        </li>
-        <li class="sentence">
-          <span class="blank">birds</span> eat
-          <span class="blank">plants</span>
-        </li>
-      </ol>
+      <ol class="emoji-list" id="emojiList"></ol>
+      <ol class="sentence-list" id="sentenceList"></ol>
     </div>
   </body>
 </html>
