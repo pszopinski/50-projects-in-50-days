@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue&family=Noto+Color+Emoji&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Color Emoji", "Comic Neue", cursive;
+  font-size: 24px;
+  margin: 0;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  background-color: white;
+  padding: 2rem max(5vw, 3rem);
+  position: relative;
+}
+
+.emojis {
+  list-style: none;
+  padding: 0;
+  margin: 3rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.emoji {
+  flex: 0 0 6rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  font-size: 3rem;
+  border: 3px solid #fff3e1;
+  background-color: #fff3e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: default;
+}
+
+.emoji[draggable="true"] {
+  cursor: grab;
+  transition: all 150ms;
+
+  &:hover {
+    background-color: white;
+    scale: 110%;
+  }
+}
+
+.arrow::before {
+  content: "➡️";
+}
+
+.sentences {
+  list-style: none;
+  padding: 0;
+}
+
+.sentence {
+  margin-bottom: 2rem;
+}
+
+.sentence::after {
+  content: "🤔";
+}
+
+.sentence.correct::after {
+  content: "✅";
+}
+
+.blank {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #fff3e1;
+  rotate: 2deg;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+@media (width >= 800px) {
+  body {
+    padding: 6rem;
+    background: linear-gradient(#8177fa, #00c0e9 80%, #8bc02b 80%, transparent)
+      no-repeat #5b9821;
+  }
+
+  .container {
+    border-radius: 3rem;
+  }
+
+  .container::before,
+  .container::after {
+    position: absolute;
+    font-size: 10rem;
+    line-height: 0;
+  }
+
+  .container::before {
+    content: "🪨";
+    left: 0;
+    bottom: 0;
+    translate: -50% 50%;
+  }
+
+  .container::after {
+    content: "☁️";
+    top: 0;
+    right: 0;
+    translate: 50% -50%;
+  }
+}
