@@ -208,6 +208,19 @@ function configureDragAndDrop() {
   });
 }
 
-setUp();
-updateSentences();
-configureDragAndDrop();
+function clientIsSupported() {
+  return window.matchMedia("(hover: hover) and (pointer:fine)").matches;
+}
+
+function main() {
+  if (!clientIsSupported()) {
+    alert("Client not supported");
+    return;
+  }
+
+  setUp();
+  updateSentences();
+  configureDragAndDrop();
+}
+
+main();
