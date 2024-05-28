@@ -1,4 +1,5 @@
 const projects = [
+  "food_chain",
   "button_ripple_effect",
   "animated_navigation",
   "background_slider",
