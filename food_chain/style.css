@@ -99,6 +99,9 @@ body {
 .emoji[draggable="true"] {
   background-color: white;
   cursor: grab;
+
+  /* Ensure just the element, and not a square with parent background, is dragged on Chrome */
+  z-index: 0;
 }
 
 .emoji[draggable="true"]:active {
