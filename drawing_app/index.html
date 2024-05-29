@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Drawing App</title>
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="canvas" width="800" height="800">
+        Your device does not support this functionality.
+      </canvas>
+      <div class="toolbar">
+        <input id="color" type="color" title="Change pen color" />
+        <span id="size" class="bi bi-pencil-fill">10</span>
+        <button
+          id="decreaseSizeBtn"
+          title="Decrease pen size"
+          class="bi bi-dash-lg"
+        ></button>
+        <button
+          id="decreaseSizeBtn"
+          title="Increase pen size"
+          class="bi bi-plus-lg"
+        ></button>
+        <button
+          id="clearBtn"
+          title="Clear the canvas"
+          class="bi bi-arrow-clockwise"
+        ></button>
+      </div>
+    </div>
+  </body>
+</html>
