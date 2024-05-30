@@ -14,5 +14,65 @@ body {
 
 .container {
   margin: 1rem;
-  max-width: 400px;
+  padding: 1rem;
+  border: 1px solid #eee;
+  display: grid;
+  box-shadow: 0 0.5rem 1rem rgb(0 0 0 / 5%);
+}
+
+canvas {
+  border: 1px solid #eee;
+}
+
+canvas.drawing {
+  --shadow-depth: 0.5rem;
+}
+
+.toolbar {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.control {
+  font: inherit;
+  color: inherit;
+  padding: 0;
+  background: 0;
+  border: 1px solid #eee;
+  cursor: pointer;
+  width: 4rem;
+  height: 4rem;
+  padding: 0.5rem;
+  transition: all 150ms ease-out;
+}
+
+.control:focus,
+.control:hover {
+  background-color: #eee;
+}
+
+.control:active {
+  scale: 95%;
+}
+
+.hidden {
+  display: none;
+}
+
+.control.clear {
+  margin-left: auto;
+}
+
+@media (width <= 900px), (height <= 900px) {
+  .container > * {
+    display: none;
+  }
+
+  .container::after {
+    content: "Try enlarging your browser window or use a different device.";
+  }
 }

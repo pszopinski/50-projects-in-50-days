@@ -17,22 +17,31 @@
         Your device does not support this functionality.
       </canvas>
       <div class="toolbar">
-        <input id="color" type="color" title="Change pen color" />
-        <span id="size" class="bi bi-pencil-fill">10</span>
+        <input
+          id="color"
+          type="color"
+          class="control"
+          title="Change pen color"
+        />
         <button
           id="decreaseSizeBtn"
           title="Decrease pen size"
-          class="bi bi-dash-lg"
+          class="control bi bi-dash-lg"
         ></button>
         <button
-          id="decreaseSizeBtn"
+          id="increaseSizeBtn"
           title="Increase pen size"
-          class="bi bi-plus-lg"
+          class="control bi bi-plus-lg"
         ></button>
+        <span>
+          <i id="penUp" class="bi bi-pencil"></i>
+          <i id="penDown" class="bi bi-pencil-fill hidden"></i>
+          <span id="size">20</span>
+        </span>
         <button
           id="clearBtn"
           title="Clear the canvas"
-          class="bi bi-arrow-clockwise"
+          class="control clear bi bi-arrow-clockwise"
         ></button>
       </div>
     </div>
