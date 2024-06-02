@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Kinetic Loader</title>
+  </head>
+  <body>
+    <label class="controls">
+      Number of sides:
+      <input
+        id="numberOfSides"
+        type="number"
+        min="3"
+        max="42"
+        value="7"
+      /><br />
+      Animation duration [ms]:
+      <input
+        id="animationDuration"
+        type="number"
+        min="100"
+        max="1000"
+        value="250"
+        step="50"
+      /><br />
+    </label>
+    <!-- <div class="loader" style="--n: 5">
+      <div class="side" style="--side: 0">
+        <div class="ball-container"></div>
+      </div>
+      <div class="side" style="--side: 1">
+        <div class="ball-container"></div>
+      </div>
+      <div class="side" style="--side: 2">
+        <div class="ball-container"></div>
+      </div>
+      <div class="side" style="--side: 3">
+        <div class="ball-container"></div>
+      </div>
+      <div class="side" style="--side: 4">
+        <div class="ball-container"></div>
+      </div>
+    </div> -->
+    <div id="loader"></div>
+    <p class="loading-text">Loading</p>
+  </body>
+</html>
