@@ -1,4 +1,5 @@
 const projects = [
+  "kinetic_loader",
   "drawing_app",
   "food_chain",
   "button_ripple_effect",
