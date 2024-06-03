@@ -1,4 +1,5 @@
 const projects = [
+  "content_placeholder",
   "kinetic_loader",
   "drawing_app",
   "food_chain",
