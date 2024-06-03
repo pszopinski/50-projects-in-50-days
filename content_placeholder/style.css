@@ -89,3 +89,34 @@ button {
 .button--blue {
   background-color: var(--blue);
 }
+
+/* Placeholder */
+.placeholder {
+  height: 1em;
+  margin-bottom: calc(1lh - 1em);
+  border-radius: 1em;
+  background-size: 200% 100%;
+  background-image: linear-gradient(
+    to right,
+    #efefef,
+    #dfdfdf 10%,
+    #dfdfdf 20%,
+    #efefef 30%
+  );
+  animation: scroll-bg 1s linear infinite;
+}
+
+@keyframes scroll-bg {
+  from {
+    background-position-x: -100%;
+  }
+
+  to {
+    background-position-x: 100%;
+  }
+}
+
+.placeholder--full {
+  height: 100%;
+  border-radius: 0;
+}
