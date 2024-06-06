@@ -1,4 +1,5 @@
 const projects = [
+  "sticky_navbar",
   "content_placeholder",
   "kinetic_loader",
   "drawing_app",
