@@ -13,7 +13,10 @@
   </head>
   <body>
     <div class="container">
-      <div class="img-pane scroll-container">
+      <div
+        class="img-pane scroll-container scroll-container-reversed"
+        id="imgPane"
+      >
         <img
           class="img scroll-item"
           src="https://picsum.photos/id/239/700"
@@ -24,18 +27,27 @@
           src="https://picsum.photos/id/39/700"
           alt=""
         />
+        <img
+          class="img scroll-item"
+          src="https://picsum.photos/id/9/700"
+          alt=""
+        />
       </div>
       <nav class="navigation">
-        <button class="button prev bi bi-arrow-left"></button>
-        <button class="button next bi bi-arrow-right"></button>
+        <button class="button prev bi bi-arrow-left" id="prevBtn"></button>
+        <button class="button next bi bi-arrow-right" id="nextBtn"></button>
       </nav>
-      <div class="text-pane scroll-container">
+      <div class="text-pane scroll-container" id="textPane">
         <div class="text scroll-item" style="background-color: blueviolet">
-          <p class="big">Big Heading</p>
+          <p class="big">1 Dmuchawiec</p>
           <p>Some description here</p>
         </div>
         <div class="text scroll-item" style="background-color: blue">
-          <p class="big">Big Heading</p>
+          <p class="big">2 Gramofon</p>
+          <p>Some description here</p>
+        </div>
+        <div class="text scroll-item" style="background-color: navy">
+          <p class="big">3 Laptop</p>
           <p>Some description here</p>
         </div>
       </div>
