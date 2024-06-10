@@ -6,26 +6,50 @@ body {
   font-family: system-ui, sans-serif;
   line-height: 1.75;
   margin: 0;
-  color: #333;
+  color: white;
+}
+
+p {
+  margin: 0;
 }
 
 .container {
   width: 100dvw;
   height: 100dvh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
 
-.img-container {
+/* Images */
+
+.img-pane {
   flex: 3;
-  background-color: aliceblue;
 }
 
-.text-container {
-  flex: 1;
-  background-color: aquamarine;
+.img {
+  object-fit: cover;
+  object-position: center;
 }
+
+/* Text */
+
+.text-pane {
+  flex: 1;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.big {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* Buttons */
 
 .navigation {
   flex: 0;
@@ -40,9 +64,9 @@ body {
   width: 2rem;
   height: 2rem;
   background-color: white;
+  color: #333;
   border: 0;
   padding: 0;
-  color: inherit;
   cursor: pointer;
   position: absolute;
   right: 3rem;
@@ -60,9 +84,32 @@ body {
   transform-origin: top left;
 }
 
+/* Scroll container */
+
+.scroll-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  overflow: auto; /* temporary */
+  display: flex;
+  transition: translate 200ms ease-out;
+}
+
+.scroll-item {
+  flex: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Landscape view */
+
 @media (orientation: landscape) {
   .container {
     flex-direction: row-reverse;
+  }
+
+  .scroll-container {
+    flex-direction: column;
   }
 
   .button {

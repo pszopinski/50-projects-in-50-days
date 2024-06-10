@@ -13,12 +13,32 @@
   </head>
   <body>
     <div class="container">
-      <div class="img-container">Img container</div>
+      <div class="img-pane scroll-container">
+        <img
+          class="img scroll-item"
+          src="https://picsum.photos/id/239/700"
+          alt=""
+        />
+        <img
+          class="img scroll-item"
+          src="https://picsum.photos/id/39/700"
+          alt=""
+        />
+      </div>
       <nav class="navigation">
         <button class="button prev bi bi-arrow-left"></button>
         <button class="button next bi bi-arrow-right"></button>
       </nav>
-      <div class="text-container">Text container</div>
+      <div class="text-pane scroll-container">
+        <div class="text scroll-item" style="background-color: blueviolet">
+          <p class="big">Big Heading</p>
+          <p>Some description here</p>
+        </div>
+        <div class="text scroll-item" style="background-color: blue">
+          <p class="big">Big Heading</p>
+          <p>Some description here</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
